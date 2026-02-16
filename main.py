@@ -68,7 +68,7 @@ def reconstruct_file(original_file_name, output_file_name):
                     print(f"Read: {chunk_path}")
 
 
-print("File Reconstructed Successfully.")
+    print("File Reconstructed Successfully.")
 
 
 choice = input("Enter 1 to Upload, 2 to Reconstruct: ")
