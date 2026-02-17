@@ -31,6 +31,12 @@ def slpit_file_into_chunks(file_path):
                 break
 
             chunk_file_name = f"storage/{file_name}_chunk{chunk_number}"
+            #Resume support: If chunk already exists, skip writing and just update metadata
+            if os.path.exists(chunk_file_name):
+                print(f"skipping existing chunk: {chunk_file_name}")
+                chunk_number += 1
+                continue
+                
             with open(chunk_file_name, 'wb') as chunk_file:
                 chunk_file.write(data)
             
